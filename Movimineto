@@ -1,0 +1,45 @@
+Unity.Engine;
+System.Collections;
+
+public Class Movimiento : MonoBehaviour; {
+
+public float velocidadMovimiento = 2.0f;
+public float velocidadSalto = 2.0f;
+public bool ObservandoDerecha =  true;
+public float direccionMover = 2.0f;
+
+
+private float  horizontal = 0.0f;
+private vector 3  escalaInicial =  vector 3.zero;
+private rigidbody2D cuerpoRigido2D
+
+void Start ()
+
+escalaInicial = Input.GetAxis ("Horizontal");
+cuerpoRigido2D = this.GetComponent <rigibody> ();
+animatorPersonaje = this.GetComponent < animator> ();
+}
+void update ()
+{
+horizontal = Input.GetAxis ("Horizontal");
+cuerpoRigido2D.velocity = new Vector2.up* velocidadSalto;
+}
+animatorPersonaje.SetFloat (" velocidadMovimiento", Mathf.Abs ( horizontal));
+CalcularFlip ();
+}
+void CaluclarFDlip ()
+{
+    if ( estaObservandoDerecha && horizongal < 0.0f)
+    {
+    This.Transform.localScale = New vector 3 ( -escalaIncial.x, escalaIncial.y , escalaInicial.z);
+    estaObservandoDerecha = False;
+    }
+    if ( !estaObservandoDerecha && horizontal > 0.0f)
+    {
+    This.Transform.localScale  = New vector3 ( escalaInicial.x , escalaInicial.y , escalaInicial.z);
+    estaObservandoDerecha = True;
+      }
+      }
+      }
+    
+
